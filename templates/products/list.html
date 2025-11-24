@@ -2,10 +2,9 @@
 <div class="d-flex justify-content-between mb-4"><h2>Produtos</h2>
 <a href="/products/new" class="btn btn-primary">Novo Produto</a></div>
 <table class="table table-striped">
-<thead class="table-dark"><tr><th>Imagem</th><th>Nome</th><th>SKU</th><th>Preço</th><th>Estoque</th><th></th></tr></thead>
+<thead class="table-dark"><tr><th>Imagem</th><th>Nome</th><th>SKU</th><th>Preço</th><th>Estoque</th></tr></thead>
 <tbody>{% for p in produtos %}
 <tr><td>{% if p.image_url %}<img src="{{ p.image_url }}" width="55">{% endif %}</td><td>{{ p.nome }}</td>
-<td>{{ p.sku }}</td><td>R$ {{ p.preco }}</td><td>{{ p.estoque }}</td>
-<td><!-- futuro: editar/excluir --></td></tr>
+<td>{{ p.sku }}</td><td>R$ {{ p.preco }}</td><td>{{ p.estoque }}</td></tr>
 {% endfor %}</tbody></table>
 {% endblock %}

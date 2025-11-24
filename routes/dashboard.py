@@ -1,5 +1,6 @@
 
 from flask import Blueprint, render_template
+from flask_login import login_required
 from utils.db import db
 from models.product import Product
 from models.sale import Sale
@@ -7,6 +8,7 @@ from models.sale import Sale
 dashboard_bp = Blueprint("dashboard", __name__, url_prefix="/dashboard")
 
 @dashboard_bp.route("/")
+@login_required
 def home():
     total_produtos = db.session.query(Product).count()
     total_estoque = db.session.query(db.func.coalesce(db.func.sum(Product.estoque), 0)).scalar()

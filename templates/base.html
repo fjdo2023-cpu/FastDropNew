@@ -19,6 +19,17 @@ body { background:#f5f6fa; }
 <a href="/sales"><i class="bi bi-receipt"></i> Vendas</a>
 <a href="/logout"><i class="bi bi-box-arrow-left"></i> Sair</a>
 </div>
-<div class="content-area">{% block content %}{% endblock %}</div>
+<div class="content-area">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="mb-3">
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }}">{{ msg }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body></html>
