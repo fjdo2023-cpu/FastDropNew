@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<div class="d-flex justify-content-between mb-4"><h2>Produtos</h2>
+<a href="/products/new" class="btn btn-primary">Novo Produto</a></div>
+<table class="table table-striped">
+<thead class="table-dark"><tr><th>Imagem</th><th>Nome</th><th>SKU</th><th>Preço</th><th>Estoque</th><th></th></tr></thead>
+<tbody>{% for p in produtos %}
+<tr><td><img src="{{ p.image_url }}" width="55"></td><td>{{ p.nome }}</td>
+<td>{{ p.sku }}</td><td>R$ {{ p.preco }}</td><td>{{ p.estoque }}</td>
+<td><a class="btn btn-warning btn-sm" href="/products/edit/{{ p.id }}">Editar</a>
+<a class="btn btn-danger btn-sm" href="/products/delete/{{ p.id }}">Excluir</a></td></tr>
+{% endfor %}</tbody></table>
+{% endblock %}
