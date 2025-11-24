@@ -10,6 +10,5 @@ class Config:
     AWS_REGION = os.getenv("AWS_REGION", "us-east-2")
     S3_UPLOAD_FOLDER = os.getenv("S3_UPLOAD_FOLDER", "uploads")
 
-    # admin inicial (criado automaticamente se não existir)
     ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
     ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")

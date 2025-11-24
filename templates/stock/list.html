@@ -1,8 +1,20 @@
-{% extends "base.html" %}{% block content %}
+
+{% extends "base.html" %}
+{% block content %}
 <h2>Estoque</h2>
 <table class="table table-bordered mt-3">
-<thead class="table-dark"><tr><th>Produto</th><th>SKU</th><th>Estoque</th><th>Custo Médio</th></tr></thead>
-<tbody>{% for p in produtos %}
-<tr><td>{{ p.nome }}</td><td>{{ p.sku }}</td><td>{{ p.estoque }}</td><td>R$ {{ p.custo_medio }}</td></tr>
-{% endfor %}</tbody></table>
+  <thead class="table-dark">
+    <tr><th>Produto</th><th>SKU</th><th>Estoque</th><th>Custo Médio</th></tr>
+  </thead>
+  <tbody>
+    {% for p in produtos %}
+    <tr>
+      <td>{{ p.nome }}</td>
+      <td>{{ p.sku }}</td>
+      <td>{{ p.estoque }}</td>
+      <td>R$ {{ p.custo_medio }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

@@ -1,9 +1,11 @@
-{% extends "base.html" %}{% block content %}
+
+{% extends "base.html" %}
+{% block content %}
 <h2 class="mb-4">Dashboard</h2>
 <div class="row g-4">
-<div class="col-md-3"><div class="card p-3"><h6>Total de Produtos</h6><h3>{{ total_produtos }}</h3></div></div>
-<div class="col-md-3"><div class="card p-3"><h6>Estoque Total</h6><h3>{{ total_estoque }}</h3></div></div>
-<div class="col-md-3"><div class="card p-3"><h6>Vendas do Dia</h6><h3>{{ vendas_dia }}</h3></div></div>
-<div class="col-md-3"><div class="card p-3"><h6>Lucro do Dia</h6><h3>R$ {{ lucro_dia }}</h3></div></div>
+  <div class="col-md-3"><div class="card p-3"><h6>Total de Produtos</h6><h3>{{ total_produtos }}</h3></div></div>
+  <div class="col-md-3"><div class="card p-3"><h6>Estoque Total</h6><h3>{{ total_estoque }}</h3></div></div>
+  <div class="col-md-3"><div class="card p-3"><h6>Vendas do Dia</h6><h3>{{ vendas_dia }}</h3></div></div>
+  <div class="col-md-3"><div class="card p-3"><h6>Lucro do Dia</h6><h3>R$ {{ lucro_dia }}</h3></div></div>
 </div>
 {% endblock %}
